@@ -39,39 +39,39 @@ The system is **fully data-driven** and requires only patient health parameters 
 
 ## 📊 Machine Learning Models Used
 
-| Task                                         | Model(s) Used                                                                   |
-| -------------------------------------------- | ------------------------------------------------------------------------------- |
-| **Disease Risk Prediction (Classification)** | Logistic Regression, Support Vector Machine (SVM), **Random Forest Classifier** |
-| **Expense Prediction (Regression)**          | **Linear Regression**, Decision Tree Regressor, Random Forest Regressor         |
-| **Patient Risk Grouping (Clustering)**       | K-Means Clustering                                                              |
+| Task                                         | Model(s) Used                                                                                                    |
+| -------------------------------------------- | -------------------------------------------------------------------------------                                  |
+| **Disease Risk Prediction (Classification)** | Logistic Regression, Support Vector Machine (SVM), **Random Forest Classifier**, Decision Tree                   |
+| **Expense Prediction (Regression)**          | **Linear Regression**, Random Forest Regressor, Ridge Regression, Lasso Regression,ElasticNet Regression,        |
+| **Patient Risk Grouping (Clustering)**       | K-Means Clustering                                                                                               |
 
 ---
 
 # 🔍 Model Performance Analysis
 
-### 1️⃣ **Regression Models — Medical Expense Prediction**
+### 1️⃣ **Classification Models — Disease Risk Prediction**
 
-| Model                   | Performance Summary                                                         | Conclusion                              |
-| ----------------------- | --------------------------------------------------------------------------- | --------------------------------------- |
-| **Linear Regression**   | Achieved **highest R² score** and **lowest MSE**. Stable and interpretable. | ✅ **Best Model for Expense Prediction** |
-| Decision Tree Regressor | Moderate performance but **high overfitting**.                              | Not recommended for final prediction.   |
-| Random Forest Regressor | Good accuracy but slightly less stable than Linear Regression.              | Suitable but not optimal.               |
+| Model                        | Performance Summary                                                                                             | Verdict                            |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| **Logistic Regression**      | Performs adequately as a baseline but limited in capturing non-linear relationships.                            | **Baseline Model**                 |
+| **Decision Tree Classifier** | Offers interpretability with moderate performance; prone to overfitting.                                        | **Acceptable but not recommended** |
+| **Support Vector Machine**   | Shows consistently strong accuracy and F1-score; handles complex decision boundaries effectively.               | **Recommended Model**              |
+| **Random Forest Classifier** | Provides the highest accuracy and generalization; robust to noise and overfitting due to ensemble architecture. | ⭐ **Best Overall Model**           |
 
-> **Final Choice for Regression:**
-> ➡️ **Linear Regression** — Best accuracy & reliability in predicting healthcare expenses.
 
 ---
 
-### 2️⃣ **Classification Models — Disease Risk Prediction**
+### 2️⃣ **Regression Models — Medical Expense Prediction****
 
-| Model                        | Performance Summary                                                       | Conclusion                                       |
-| ---------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------ |
-| Logistic Regression          | Works as a baseline model but limited in handling complex patterns.       | Basic, less accurate.                            |
-| Support Vector Machine (SVM) | Higher accuracy but **slower computation**.                               | Good but less efficient.                         |
-| **Random Forest Classifier** | **Highest accuracy**, best precision-recall, **low overfitting**, stable. | ✅ **Best Model for Disease Risk Classification** |
+| Model                       | Performance Summary                                                                   | Verdict                          |
+| --------------------------- | ------------------------------------------------------------------------------------- | -------------------------------- |
+| **Linear Regression**       | Establishes a baseline with moderate R²; limited with non-linear patterns.            | **Baseline Model**               |
+| **Ridge Regression**        | Stabilizes coefficients via L2 regularization; marginal improvement over baseline.    | **Reliable Regularized Model**   |
+| **Lasso Regression**        | Similar performance to Ridge; performs feature selection effectively.                 | **Useful for Feature Reduction** |
+| **ElasticNet Regression**   | Combines L1 + L2 regularization; best-performing linear model in this task.           | **Strong Linear Model**          |
+| **Random Forest Regressor** | Captures complex, non-linear patterns well and achieves one of the highest R² scores. | ⭐ **Best Overall Model**         |
 
-> **Final Choice for Classification:**
-> ➡️ **Random Forest Classifier** — Most stable and accurate for predicting disease risk levels.
+
 
 ---
 
@@ -94,7 +94,7 @@ Clustering helps in:
 | Task                              | Best Performing Model        | Reason                                                 |
 | --------------------------------- | ---------------------------- | ------------------------------------------------------ |
 | **Disease Risk Prediction**       | **Random Forest Classifier** | Highest predictive stability & classification accuracy |
-| **Healthcare Expense Prediction** | **Linear Regression**        | Best R² and lowest MSE (most reliable estimation)      |
+| **Healthcare Expense Prediction** | **Random Forest Regressor**  | Best R² and lowest MSE (most reliable estimation)      |
 | **Patient Segmentation**          | **K-Means Clustering**       | Clear and meaningful grouping of patient risk profiles |
 
 ---
@@ -103,5 +103,5 @@ Clustering helps in:
 
 * Python (Pandas, NumPy, Scikit-Learn)
 * Matplotlib / Seaborn (Visualization)
-* Jupyter Notebook / Google Colab
+* Google Colab
 
