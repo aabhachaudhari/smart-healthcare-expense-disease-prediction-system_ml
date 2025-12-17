@@ -139,6 +139,21 @@ Clustering helps in:
 
 ---
 
+## ⚠️ Limitations
+
+- Dataset size is relatively small (1338 records), which may limit generalization.
+- Health risk is inferred indirectly from demographic and lifestyle factors, not clinical diagnoses.
+- Model performance may vary on unseen real-world healthcare data.
+
+---
+
+## 🔮 Future Improvements
+
+- Integrate larger and more diverse healthcare datasets.
+- Include explainability tools (SHAP) to interpret model predictions.
+
+---
+
 ## 🧰 Tech Stack
 
 ### Programming Language
