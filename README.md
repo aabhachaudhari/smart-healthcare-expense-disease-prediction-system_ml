@@ -3,7 +3,7 @@
 
 This project is a **Machine Learning-based Healthcare Decision Support System** that analyzes patient data to:
 
-1. **Predict Disease Risk** (Classification)
+1. **Predict Health Risk** (Classification)
 2. **Estimate Healthcare / Medical Insurance Expenses** (Regression)
 3. **Group Patients into Risk Segments** (Clustering)
 4. **Provide Lifestyle & Health Improvement Suggestions**
@@ -17,7 +17,7 @@ The system is **fully data-driven** and requires only patient health parameters 
 
 | Module                        | Purpose                                                       | Output                                              |
 | ----------------------------- | ------------------------------------------------------------- | --------------------------------------------------- |
-| **Disease Prediction**        | Classifies risk levels based on patient health indicators.    | Risk Category: Low / Medium / High                  |
+| **Health Prediction**         | Classifies risk levels based on patient health indicators.    | Risk Category: Low / Medium / High                  |
 | **Expense Prediction**        | Predicts medical insurance cost or expected medical spending. | Estimated Expense (₹ / $)                           |
 | **Patient Segmentation**      | Groups patients with similar risk characteristics.            | Cluster Group (Healthy / Moderate Risk / High Risk) |
 | **Lifestyle Recommendations** | Suggests improvements to reduce disease risk.                 | Diet, Exercise & Habit Modifications                |
@@ -36,12 +36,32 @@ The system is **fully data-driven** and requires only patient health parameters 
 * Family Medical History
 
 ---
+## 📁 Dataset Overview
+
+- **Dataset Shape:** (1338, 7)
+- **Records:** 1338 patient entries
+- **Features:**
+  - Age
+  - Sex
+  - BMI
+  - Number of Children
+  - Smoking Status
+  - Region
+- **Target Variable:**
+  - Charges (Medical Insurance Cost)
+
+### 🎯 Purpose
+The dataset is used to analyze patient demographic and lifestyle factors to:
+- Estimate medical insurance expenses using regression models
+- Assess health risk patterns associated with factors such as smoking, BMI, and age
+- Support data-driven healthcare cost prediction and patient risk segmentation
+
 
 ## 📊 Machine Learning Models Used
 
 | Task                                         | Model(s) Used                                                                                                    |
 | -------------------------------------------- | -------------------------------------------------------------------------------                                  |
-| **Disease Risk Prediction (Classification)** | Logistic Regression, Support Vector Machine (SVM), **Random Forest Classifier**, Decision Tree                   |
+| **Health Risk Prediction (Classification)**  | Logistic Regression, Support Vector Machine (SVM), **Random Forest Classifier**, Decision Tree                   |
 | **Expense Prediction (Regression)**          | **Linear Regression**, Random Forest Regressor, Ridge Regression, Lasso Regression,ElasticNet Regression,        |
 | **Patient Risk Grouping (Clustering)**       | K-Means Clustering                                                                                               |
 
@@ -49,7 +69,7 @@ The system is **fully data-driven** and requires only patient health parameters 
 
 # 🔍 Model Performance Analysis
 
-### 1️⃣ **Classification Models — Disease Risk Prediction**
+### 1️⃣ **Classification Models — Health Risk Prediction**
 
 | Model                        | Performance Summary                                                                                             | Verdict                            |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
@@ -58,10 +78,14 @@ The system is **fully data-driven** and requires only patient health parameters 
 | **Support Vector Machine**   | Shows consistently strong accuracy and F1-score; handles complex decision boundaries effectively.               | **Recommended Model**              |
 | **Random Forest Classifier** | Provides the highest accuracy and generalization; robust to noise and overfitting due to ensemble architecture. | ⭐ **Best Overall Model**           |
 
+**Random Forest Classifier (Best Model):**
+- Accuracy: ~89%
+- Precision: ~90%
+- Shows strong ability to correctly identify high-risk cases with minimal false positives
 
 ---
 
-### 2️⃣ **Regression Models — Medical Expense Prediction****
+### 2️⃣ **Regression Models — Medical Expense Prediction**
 
 | Model                       | Performance Summary                                                                   | Verdict                          |
 | --------------------------- | ------------------------------------------------------------------------------------- | -------------------------------- |
@@ -70,6 +94,11 @@ The system is **fully data-driven** and requires only patient health parameters 
 | **Lasso Regression**        | Similar performance to Ridge; performs feature selection effectively.                 | **Useful for Feature Reduction** |
 | **ElasticNet Regression**   | Combines L1 + L2 regularization; best-performing linear model in this task.           | **Strong Linear Model**          |
 | **Random Forest Regressor** | Captures complex, non-linear patterns well and achieves one of the highest R² scores. | ⭐ **Best Overall Model**         |
+
+
+**Random Forest Regressor (Best Model):**
+- R² Score: 0.5607
+- Mean Squared Error (MSE): 2740.44
 
 
 
@@ -93,15 +122,58 @@ Clustering helps in:
 
 | Task                              | Best Performing Model        | Reason                                                 |
 | --------------------------------- | ---------------------------- | ------------------------------------------------------ |
-| **Disease Risk Prediction**       | **Random Forest Classifier** | Highest predictive stability & classification accuracy |
-| **Healthcare Expense Prediction** | **Random Forest Regressor**  | Best R² and lowest MSE (most reliable estimation)      |
+| **Health Risk Prediction**        | **Random Forest Classifier** | Accuracy: ~89% (better then rest), Precision: 90%      |
+| **Healthcare Expense Prediction** | **Random Forest Regressor**  | Better R² (0.5607) and lowest MSE (2740.44)            |
 | **Patient Segmentation**          | **K-Means Clustering**       | Clear and meaningful grouping of patient risk profiles |
 
 ---
 
 ## 🧰 Tech Stack
 
-* Python (Pandas, NumPy, Scikit-Learn)
-* Matplotlib / Seaborn (Visualization)
-* Google Colab
+### Programming Language
+- Python
+
+### Data Analysis & Preprocessing
+- Pandas
+- NumPy
+
+### Machine Learning & Modeling
+- scikit-learn
+  - Logistic Regression
+  - Support Vector Machine (SVM)
+  - Decision Tree Classifier
+  - Random Forest Classifier & Regressor
+  - Linear Regression
+  - Ridge Regression
+  - Lasso Regression
+  - ElasticNet Regression
+  - K-Means Clustering
+
+### Data Visualization
+- Matplotlib
+- Seaborn
+
+### Model Evaluation
+- Accuracy Score
+- Precision, Recall, F1-score
+- R² Score
+- Mean Squared Error (MSE)
+
+### Development Environment
+- Google Colab
+- Jupyter Notebook
+
+### Version Control
+- Git
+- GitHub
+
+
+---
+
+## 🚀 How to Run the Project
+
+1. Clone the repository  
+2. Install dependencies  
+   `pip install -r requirements.txt`  
+3. Run the notebook / script  
 
