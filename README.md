@@ -201,5 +201,6 @@ Clustering helps in:
 1. Clone the repository  
 2. Install dependencies  
    `pip install -r requirements.txt`  
-3. Run the notebook / script  
+3. Open and run the notebook cells sequentially
+
 
