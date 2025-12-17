@@ -143,7 +143,7 @@ Clustering helps in:
 
 - Dataset size is relatively small (1338 records), which may limit generalization.
 - Health risk is inferred indirectly from demographic and lifestyle factors, not clinical diagnoses.
-- Model performance may vary on unseen real-world healthcare data.
+- Model performance may vary on unseen real-world healthcare data due to limited dataset diversity.
 
 ---
 
@@ -181,7 +181,7 @@ Clustering helps in:
 
 ### Model Evaluation
 - Accuracy Score
-- Precision, Recall, F1-score
+- Precision
 - R² Score
 - Mean Squared Error (MSE)
 
@@ -201,6 +201,7 @@ Clustering helps in:
 1. Clone the repository  
 2. Install dependencies  
    `pip install -r requirements.txt`  
-3. Open and run the notebook cells sequentially
+3. Open the Jupyter notebook and run all cells sequentially
+
 
 
