@@ -24,6 +24,17 @@ The system is **fully data-driven** and requires only patient health parameters 
 
 ---
 
+## 🔄 Project Workflow
+
+1. Data Cleaning & Preprocessing  
+2. Exploratory Data Analysis (EDA)  
+3. Feature Encoding & Scaling  
+4. Model Training (Classification, Regression, Clustering)  
+5. Model Evaluation & Comparison  
+6. Final Model Selection  
+
+---
+
 ## 🩺 Input Patient Features
 
 * Age
